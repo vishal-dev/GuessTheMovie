@@ -1,0 +1,22 @@
+pipeline{
+
+    agent any
+
+    stages {
+        stage ('Compile stage'){
+            steps {
+                    echo "compile success"
+            }
+        }
+        stage ('Testing stage'){
+
+            steps {
+            echo "testing success"
+            }
+        }
+
+
+    }
+
+
+}
