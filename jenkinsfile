@@ -21,13 +21,13 @@ pipeline{
                     echo "Image deployed to test cluster repository"
             }
         }
-        stage ('Restart services in ECS test region '){
+        stage ('Refresh services in Test cluster '){
             steps {
                     echo "New task definitions are added and service is updated to refresh the container with latest image"
             }
         }
         
-        stage ('Testing '){
+        stage ('Automated Testing '){
 
             steps {
             sh 'sleep 17s'
@@ -37,6 +37,11 @@ pipeline{
         stage ('Deploy image to Dev region '){
             steps {
                     echo "Deployed the new image to Dev environment"
+            }
+        }
+        stage ('Email Dev Team '){
+            steps {
+                    echo "Update Dev team about the status of build and test report"
             }
         }
 
