@@ -9,9 +9,11 @@ pipeline{
             }
         }
         stage ('Build Docker Image '){
-            steps {
-                    sh sleep 15s
+            steps {                    
                     echo "Docker image build success"
+            }
+            steps {
+                sh sleep 15s
             }
         }
         stage ('Push Image to ECR test cluster '){
