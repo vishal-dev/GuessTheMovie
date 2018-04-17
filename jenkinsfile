@@ -3,15 +3,38 @@ pipeline{
     agent any
 
     stages {
-        stage ('Compile stage'){
+        stage ('Compile '){
             steps {
                     echo "compile success"
             }
         }
-        stage ('Testing stage'){
+        stage ('Build Docker Image '){
+            steps {
+                    sleep 15s
+                    echo "Docker image build success"
+            }
+        }
+        stage ('Push Image to ECR test cluster '){
+            steps {
+                    echo "Image deployed to test cluster repository"
+            }
+        }
+        stage ('Restart services in ECS test region '){
+            steps {
+                    echo "New task definitions are added and service is updated to refresh the container with latest image"
+            }
+        }
+        
+        stage ('Testing '){
 
             steps {
-            echo "testing success"
+            sleep 17s
+            echo "automated test cases completed successfully"
+            }
+        }
+        stage ('Deploy image to Dev region '){
+            steps {
+                    echo "Deployed the new image to Dev environment"
             }
         }
 
