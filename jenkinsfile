@@ -13,7 +13,7 @@ pipeline{
                     echo "Docker image build success"
             }
             {
-               sh 'sleep 14s'
+               sh 'sleep 17s'
             }
         }
         stage ('Push Image to ECR test cluster '){
@@ -30,7 +30,7 @@ pipeline{
         stage ('Automated Testing '){
 
             steps {
-            sh 'sleep 16s'
+            sh 'sleep 19s'
             echo "automated test cases completed successfully"
             }
         }
