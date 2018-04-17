@@ -36,7 +36,7 @@ pipeline{
         }
         stage ('Deploy to Dev region (Ansible) '){
             steps {
-                    echo "Deployed the new image to Dev environment by running Ansible playbook"
+                    echo "Deployed the new image to Dev environment by running Ansible playbook.."
             }
         }
         stage ('Email Dev Team '){
