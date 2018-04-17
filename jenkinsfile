@@ -13,7 +13,7 @@ pipeline{
                     echo "Docker image build success"
             }
             {
-               sh 'sleep 15s'
+               sh 'sleep 14s'
             }
         }
         stage ('Push Image to ECR test cluster '){
@@ -30,13 +30,13 @@ pipeline{
         stage ('Automated Testing '){
 
             steps {
-            sh 'sleep 17s'
+            sh 'sleep 16s'
             echo "automated test cases completed successfully"
             }
         }
-        stage ('Deploy image to Dev region '){
+        stage ('Deploy to Dev region (Ansible) '){
             steps {
-                    echo "Deployed the new image to Dev environment"
+                    echo "Deployed the new image to Dev environment by running Ansible playbook"
             }
         }
         stage ('Email Dev Team '){
